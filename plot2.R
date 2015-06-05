@@ -35,13 +35,15 @@ dateTime   <- as.POSIXct(paste(filteredData$Date,filteredData$Time, sep=" "))
 ## Set locale to English to get the proper X axis titles (since my laptop is in Spanish)
 Sys.setlocale('LC_TIME', 'en_GB.UTF-8')
 
+#Send a copy the drawing to png (with right dimensions)
+pngFile <- "plot2.png"
+png(pngFile, width=480,height=480)
+
 #Plot the drawing
 plot(dateTime,filteredData$Global_active_power, main="", xlab="", ylab="",type="l")
 title(ylab="Global Active Power (kilowatts)")
 
-#Copy the drawing to png
-pngFile <- "plot2.png"
-dev.copy(png, file=pngFile)
+## Close the drawing device
 dev.off()
 
 ##Set locale back to Spanish
