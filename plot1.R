@@ -29,11 +29,6 @@ plotData$Date <- as.Date(plotData$Date,dateFormat)
 ## Filter the data to select only the required rows using dplyr
 filteredData <- filter(plotData,Date >= as.Date(startDate,dateFormat),Date <= as.Date(endDate,dateFormat))
 
-timeFormat="%H:%M:%S"   ##Format to convert time
-
-#Convert time to the appropiate format
-filteredData$Time <- strptime(filteredData$Time,timeFormat)
-
 #Plot the drawing
 hist(filteredData$Global_active_power, main="", xlab="", col="red")
 title(main="Global Active Power",xlab="Global Active Power (kilowatts)")
