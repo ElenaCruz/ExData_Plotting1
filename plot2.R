@@ -3,7 +3,7 @@
 ## Elena Cruz Martin, 2015-06-05
 ## This script loads the data coming from https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip, taking only
 ## those days that are relevant for the excercise (2007-02-01 to 2007-02-02) and plotting an histogram of the Global Active Power data according
-## to the exercise specification. The plot will be saved as a 480x480 png file called plot1.png
+## to the exercise specification. The plot will be saved as a 480x480 png file called plot2.png
 
 library(datasets)
 library(dplyr)
