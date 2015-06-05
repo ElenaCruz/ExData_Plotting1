@@ -29,13 +29,15 @@ plotData$Date <- as.Date(plotData$Date,dateFormat)
 ## Filter the data to select only the required rows using dplyr
 filteredData <- filter(plotData,Date >= as.Date(startDate,dateFormat),Date <= as.Date(endDate,dateFormat))
 
+#Send a copy the drawing to png (with right dimensions)
+pngFile <- "plot1.png"
+png(pngFile, width=480,height=480)
+
 #Plot the drawing
 hist(filteredData$Global_active_power, main="", xlab="", col="red")
 title(main="Global Active Power",xlab="Global Active Power (kilowatts)")
 
-#Copy the drawing to png
-pngFile <- "plot1.png"
-dev.copy(png, file=pngFile)
+## Close the drawing device
 dev.off()
 
 
